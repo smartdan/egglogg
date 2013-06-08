@@ -1,39 +1,29 @@
-##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
-#   }
-#
 ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'egglogg_development.db')
-
+  :adapter => 'postgresql',
+  :host => 'localhost',
+  :port => '5432',
+  :database => 'egglogg_development',
+  :username  => 'postgres',
+  :password  => 'sabetta13'
 }
-
-postgres = URI.parse(ENV['DATABASE_URL'] || '')
+ 
+ActiveRecord::Base.configurations[:test] = {
+  :adapter => 'postgresql',
+  :host => 'localhost'
+  :database => 'egglogg_test.db',
+  :username  => 'postgres',
+  :password  => 'sabetta13'
+}
+ 
+@postgres = URI.parse(ENV['DATABASE_URL'] || '')
 
 ActiveRecord::Base.configurations[:production] = {
   :adapter  => 'postgresql',
   :encoding => 'utf8',
-  :database => postgres.path[1..-1], 
-  :username => postgres.user,
-  :password => postgres.password,
-  :host     => postgres.host
-}
-
-ActiveRecord::Base.configurations[:test] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'egglogg_test.db')
-
+  :database => @postgres.path[1..-1], 
+  :username => @postgres.user,
+  :password => @postgres.password,
+  :host     => @postgres.host
 }
 
 # Setup our logger
