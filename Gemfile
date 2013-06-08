@@ -24,5 +24,4 @@ gem 'rack-test', :require => 'rack/test', :group => 'test'
 gem 'pg'
 # Padrino
 gem 'padrino', '0.11.2'
-gem 'sqlite3'
 gem 'thin'

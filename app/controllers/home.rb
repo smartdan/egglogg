@@ -18,7 +18,9 @@ Egglogg::App.controllers :home do
 # get '/example' do
 #   'Hello world!'
 # end
-
+  before do
+    @recents = Post.find(:all, :order => 'created_at desc', :limit => 5)
+  end
 
   get :index do
     render 'home/index'
