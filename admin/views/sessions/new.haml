@@ -23,11 +23,6 @@
         %fieldset.control-group
           %label.login-input-label.control-label{:for => :password}= pat('login.password')
           .login-controls.controls=password_field_tag :password, :value => params[:password]
-        %fieldset.login-control-group-last.control-group
-          .login-controls.controls
-            %label.login-bypass-label.checkbox
-              =check_box_tag :bypass
-              =pat('login.bypass')
 
       .login-footer.modal-footer
         =submit_tag(pat('login.sign_in'), :class => 'btn btn-primary pull-right')
