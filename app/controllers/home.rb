@@ -19,7 +19,7 @@ Egglogg::App.controllers :home do
 #   'Hello world!'
 # end
   before do
-    @recents = Post.find(:all, :order => 'created_at desc', :limit => 5)
+    @recents = Post.find(:all, :order => 'created_at desc')
   end
 
   get :index do
