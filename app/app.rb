@@ -12,6 +12,9 @@ module Egglogg
     enable :sessions
     set :session_id, "egglog-global-session"
 
+    before do
+      @recents = Post.find(:all, :order => 'created_at desc', :limit => 5)
+    end
 
     ##
     # Caching support

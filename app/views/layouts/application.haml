@@ -21,6 +21,12 @@
           = text_field_tag 'query', :value => params[:query]
           = submit_tag 'Search'
         %br
+        %p News
+        - if @recents.nil? == false
+          %ul.bulleted
+          - @recents.each do |post|
+            %li= link_to post.title, url_for(:posts, :show, :id => post)        
+        %br
         %p Feed
         %ul.bulleted
           %li= link_to 'RSS', '/posts.rss'
