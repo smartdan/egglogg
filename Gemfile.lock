@@ -57,6 +57,7 @@ GEM
     padrino-mailer (0.11.2)
       mail (~> 2.5.3)
       padrino-core (= 0.11.2)
+    pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -97,6 +98,7 @@ DEPENDENCIES
   bcrypt-ruby
   haml
   padrino (= 0.11.2)
+  pg
   rack-test
   rake
   sass

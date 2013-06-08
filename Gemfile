@@ -24,6 +24,9 @@ gem 'sqlite3'
 gem 'shoulda', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
 
+group :production do
+ gem 'pg'
+end
 # Padrino Stable Gem
 gem 'padrino', '0.11.2'
 
