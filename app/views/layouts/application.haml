@@ -1,13 +1,13 @@
 !!! Strict
 %html
   %head
-    %title= [@title, "egglog"].compact.join(" | ")
+    %title= [@title, "egglogg"].compact.join(" | ")
     = stylesheet_link_tag 'reset', 'application'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
   %body
     #header
-      %h1 egglogg webapp
+      %h1 EggLogg
       %ul.menu
         %li= link_to 'Home', url_for(:home, :index)
         %li= link_to 'News', url_for(:posts, :index)
