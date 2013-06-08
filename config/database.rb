@@ -6,14 +6,7 @@ ActiveRecord::Base.configurations[:development] = {
   :username  => 'postgres',
   :password  => 'sabetta13'
 }
- 
-ActiveRecord::Base.configurations[:test] = {
-  :adapter => 'postgresql',
-  :host => 'localhost'
-  :database => 'egglogg_test.db',
-  :username  => 'postgres',
-  :password  => 'sabetta13'
-}
+
  
 @postgres = URI.parse(ENV['DATABASE_URL'] || '')
 

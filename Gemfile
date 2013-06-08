@@ -11,8 +11,9 @@ source 'https://rubygems.org'
 # gem 'oj'
 
 # Project requirements
+source 'https://rubygems.org'
+ruby "1.9.3"
 gem 'rake'
-
 # Component requirements
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'sass'
