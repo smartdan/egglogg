@@ -7,7 +7,8 @@
     = yield_content :include
   %body
     #header
-      %h1 EggLogg
+      %h1= image_tag('egglogo.jpg', :width => '30') 
+      %h1 egglogg
       %ul.menu
         %li= link_to 'Home', url_for(:home, :index)
         %li= link_to 'News', url_for(:posts, :index)
