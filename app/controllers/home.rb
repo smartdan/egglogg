@@ -27,14 +27,14 @@ Egglogg::App.controllers :home do
   end
 
   get :about do
-    render 'home/about'
+    render '/home/about'
   end
 
   get :contact do
-    if(current_account.nil?)
-      flash[:error] = 'You are not authorized.'
-      redirect '/'
-    end
+    #if(current_account.nil?)
+    #  flash[:error] = 'You are not authorized.'
+    #redirect '/'
+    #end
 
     render 'home/contact'
   end

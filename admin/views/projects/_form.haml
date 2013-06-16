@@ -1,0 +1,43 @@
+- error = @project.errors.include?(:name)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    ~f.text_area :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @project.errors.include?(:description)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    ~f.text_area :description, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+- error = @project.errors.include?(:started_at)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :started_at, :class => 'control-label'
+  .controls
+    =f.text_field :started_at, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:started_at, :class => 'text-error') : pat(:example)
+- error = @project.errors.include?(:started_by_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :started_by_id, :class => 'control-label'
+  .controls
+    =f.text_field :started_by_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:started_by_id, :class => 'text-error') : pat(:example)
+- error = @project.errors.include?(:completed_at)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :completed_at, :class => 'control-label'
+  .controls
+    =f.text_field :completed_at, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:completed_at, :class => 'text-error') : pat(:example)
+- error = @project.errors.include?(:leaded_by_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :leaded_by_id, :class => 'control-label'
+  .controls
+    =f.text_field :leaded_by_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:leaded_by_id, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:projects, :index), :class => 'btn'

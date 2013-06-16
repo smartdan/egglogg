@@ -1,0 +1,17 @@
+- @title = @project.name
+#show
+  .post
+    .title= @project.name
+    .date= time_ago_in_words(@project.created_at || Time.now) + ' ago'
+    .body= simple_format(@project.description)  
+    .details
+      
+%p The project's tasks
+%ul
+- @project.tasks.each do |task|
+  %li= task.name + ': ' + task.description
+%br
+%br
+.author Posted by #{@project.leader.name}  
+%br
+%p= link_to 'View all projects', url_for(:projects, :index)

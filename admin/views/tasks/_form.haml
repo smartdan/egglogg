@@ -1,0 +1,43 @@
+- error = @task.errors.include?(:name)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @task.errors.include?(:description)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    ~f.text_area :description, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+- error = @task.errors.include?(:deadline_at)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :deadline_at, :class => 'control-label'
+  .controls
+    =f.text_field :deadline_at, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:deadline_at, :class => 'text-error') : pat(:example)
+- error = @task.errors.include?(:account_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :account_id, :class => 'control-label'
+  .controls
+    =f.text_field :account_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:account_id, :class => 'text-error') : pat(:example)
+- error = @task.errors.include?(:project_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :project_id, :class => 'control-label'
+  .controls
+    =f.text_field :project_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:project_id, :class => 'text-error') : pat(:example)
+- error = @task.errors.include?(:is_completed)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :is_completed, :class => 'control-label'
+  .controls
+    =f.check_box :is_completed, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:is_completed, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:tasks, :index), :class => 'btn'

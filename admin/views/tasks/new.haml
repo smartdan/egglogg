@@ -1,0 +1,7 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:tasks, :index)
+  %li.active=link_to tag_icon(:plus, pat(:new)), url(:tasks, :new)
+
+.tabs-content
+  -form_for :task, url(:tasks, :create), :class => 'form-horizontal' do |f|
+    =partial 'tasks/form', :locals => { :f => f }

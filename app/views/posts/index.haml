@@ -1,7 +1,10 @@
-- @title = "Welcome"
-
+- @title = "News"
+-if @posts == nil || @posts.count == 0
+ %p No news available.
+ 
 - content_for :include do
-  = feed_tag(:rss, url(:posts, :index, :format => :rss),:title => "RSS")
-  = feed_tag(:atom, url(:posts, :index, :format => :atom),:title => "ATOM")
-
+ = feed_tag(:rss, url(:posts, :index, :format => :rss),:title => "RSS")
+ = feed_tag(:atom, url(:posts, :index, :format => :atom),:title => "ATOM")
+  
 #posts= partial 'posts/post', :collection => @posts
+

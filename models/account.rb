@@ -1,6 +1,10 @@
 class Account < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
 
+  has_many :started_projects, :foreign_key =>"started_by_id"
+  has_many :leaded_projects, :foreign_key =>"leaded_by_id"
+  has_many :tasks
+   
   # Validations
   validates_presence_of     :email, :role
   validates_presence_of     :password,                   :if => :password_required

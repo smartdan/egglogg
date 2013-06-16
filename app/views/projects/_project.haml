@@ -1,0 +1,7 @@
+.post
+ .title= link_to project.name, url_for(:projects, :show, :id => project)
+ .date= time_ago_in_words(project.created_at || Time.now) + ' ago'
+ .body= simple_format(project.description)
+ .details
+  .author Leaded by #{project.leader.name} -
+  .author Created by #{project.starter.name}
