@@ -1,8 +1,8 @@
 xml.instruct!
 xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
   xml.channel do
-    xml.title "Padrino Blog"
-    xml.description "The fantastic padrino sample blog"
+    xml.title "Egglogg"
+    xml.description "News in the egglogg system"
     xml.link url_for(:posts, :index)
 
     for post in @posts
