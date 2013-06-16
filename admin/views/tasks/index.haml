@@ -46,8 +46,8 @@
           %td.list-column=task.name
           %td.list-column=task.description
           %td.list-column=task.deadline_at
-          %td.list-column=task.account_id
-          %td.list-column=task.project_id
+          %td.list-column=task.account.name
+          %td.list-column=task.project.name
           %td.list-column= task.is_completed ? tag_icon(:ok) : tag_icon(:remove)
           %td.list-column=time_ago_in_words task.created_at
           %td.list-column=time_ago_in_words task.updated_at

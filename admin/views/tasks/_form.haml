@@ -20,13 +20,13 @@
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :account_id, :class => 'control-label'
   .controls
-    =f.text_field :account_id, :class => 'input-xlarge input-with-feedback'
+    = f.select(:account_id, :class => 'input-xlarge input-with-feedback', :collection => @accounts, :fields => [:name, :id])
     %span.help-inline=error ? f.error_message_on(:account_id, :class => 'text-error') : pat(:example)
 - error = @task.errors.include?(:project_id)
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :project_id, :class => 'control-label'
   .controls
-    =f.text_field :project_id, :class => 'input-xlarge input-with-feedback'
+    = f.select(:project_id, :class => 'input-xlarge input-with-feedback', :collection => @projects, :fields => [:name, :id])
     %span.help-inline=error ? f.error_message_on(:project_id, :class => 'text-error') : pat(:example)
 - error = @task.errors.include?(:is_completed)
 %fieldset.control-group{:class => error ? 'has-error' : ''}

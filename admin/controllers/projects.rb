@@ -8,6 +8,7 @@ Egglogg::Admin.controllers :projects do
   get :new do
     @title = pat(:new_title, :model => 'project')
     @project = Project.new
+    @accounts = Account.all
     render 'projects/new'
   end
 

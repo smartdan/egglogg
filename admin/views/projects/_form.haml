@@ -20,8 +20,8 @@
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :started_by_id, :class => 'control-label'
   .controls
-    =f.text_field :started_by_id, :class => 'input-xlarge input-with-feedback'
-    %span.help-inline=error ? f.error_message_on(:started_by_id, :class => 'text-error') : pat(:example)
+    = f.select(:started_by_id, :class => 'input-xlarge input-with-feedback', :collection => @accounts, :fields => [:name, :id])
+    %span.help-inline=error ? f.error_message_on(:started_by_id, :class => 'text-error') : ''
 - error = @project.errors.include?(:completed_at)
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :completed_at, :class => 'control-label'
@@ -32,8 +32,8 @@
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :leaded_by_id, :class => 'control-label'
   .controls
-    =f.text_field :leaded_by_id, :class => 'input-xlarge input-with-feedback'
-    %span.help-inline=error ? f.error_message_on(:leaded_by_id, :class => 'text-error') : pat(:example)
+    = f.select(:leaded_by_id, :class => 'input-xlarge input-with-feedback', :collection => @accounts, :fields => [:name, :id])
+    %span.help-inline=error ? f.error_message_on(:leaded_by_id, :class => 'text-error') : ''
 
 .form-actions
   =f.submit pat(:save), :class => 'btn btn-primary'
