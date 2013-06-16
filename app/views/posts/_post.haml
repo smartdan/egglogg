@@ -3,4 +3,4 @@
   .date= time_ago_in_words(post.created_at || Time.now) + ' ago'
   .body= simple_format(post.body)
   .details
-    .author Posted by #{post.account.email}
+    .author Posted by #{post.account.name}

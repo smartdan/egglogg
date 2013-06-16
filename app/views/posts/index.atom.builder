@@ -1,10 +1,10 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  xml.title   "Padrino Sample Blog"
+  xml.title   "Egglogg"
   xml.link    "rel" => "self", "href" => url_for(:posts, :index)
   xml.id      url_for(:posts, :index)
   xml.updated @posts.first.updated_at.strftime "%Y-%m-%dT%H:%M:%SZ" if @posts.any?
-  xml.author  { xml.name "Padrino Team" }
+  xml.author  { xml.name "Egglogg Team" }
 
   @posts.each do |post|
     xml.entry do
