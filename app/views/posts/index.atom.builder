@@ -12,7 +12,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.link    "rel" => "alternate", "href" => url_for(:posts, :show, :id => post)
       xml.id      url_for(:posts, :show, :id => post)
       xml.updated post.updated_at.strftime "%Y-%m-%dT%H:%M:%SZ"
-      xml.author  { xml.name post.account.email }
+      xml.author  { xml.name post.account.name }
       xml.summary post.body
     end
   end
