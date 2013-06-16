@@ -1,6 +1,6 @@
 ****EGGLOGG****
 
-Egglogg is a webapplication for
+Egglogg is a webapp for
 - manage projects and task
 - log activities
 - publish news and directives
